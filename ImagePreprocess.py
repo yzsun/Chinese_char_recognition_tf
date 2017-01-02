@@ -12,8 +12,10 @@ from __future__ import division
 
 
 class ImagePreprocess():
+
     def __init__(self,ImageArr):
         self.ImageArr = ImageArr
+
     # padding, make sure heigth=width
     def padding(self,ImageArr):
         height,width = np.shape(self.ImageArr)
@@ -26,7 +28,7 @@ class ImagePreprocess():
             else:
                 pad_dims = ((pad_size,pad_size),(0,0))
             return np.lib.pad(self.ImageArr,pad_dims,'constant')
-            
+
     # put image into center,general in the preprocess resize
     def img2center(img_New, img):
         height,width = img.shape
@@ -37,12 +39,13 @@ class ImagePreprocess():
         widthIndex = int((width_New - width) / 2)
         heightIndex = int((height_New - height) / 2)
         img_New[heightIndex:heightIndex + height,
-                  widthIndex:widthIndex+width] = img_small
+                  widthIndex:widthIndex+width] = img
         return img_New
 
     # resize
     def resize(self,ImageArr):
-        
+
+
     # crop zeros 
     # crop the rows and columns whose elements are all zeros
     def cropZeros(self,ImageArr):
