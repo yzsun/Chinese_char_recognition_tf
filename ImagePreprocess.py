@@ -11,11 +11,10 @@ from __future__ import division
 
 
 
-class preProcess():
-    # padding to make heigth=width
+class ImagePreprocess():
     def __init__(self,ImageArr):
         self.ImageArr = ImageArr
-    
+    # padding, make sure heigth=width
     def padding(self,ImageArr):
         height,width = np.shape(self.ImageArr)
         if height == width:
@@ -27,4 +26,14 @@ class preProcess():
             else:
                 pad_dims = ((pad_size,pad_size),(0,0))
             return np.lib.pad(self.ImageArr,pad_dims,'constant')
+    # resize
+    def resize(self,ImageArr):
+        
+    # crop zeros 
+    # crop the rows and columns whose elements are all zeros
+    def cropZeros(self,ImageArr):
+        height_sum = np.sum(ImageArr,axis=0)
+        width_sum = np.sum(ImageArr,axis=1)
+        return ImageArr[width_sum!=0][:,height_sum!=0]
+        
         
