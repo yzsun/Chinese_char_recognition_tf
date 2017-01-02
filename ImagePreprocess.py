@@ -2,7 +2,7 @@
 """
 Created on Sun Jan 01 19:16:32 2017
 
-@author: Administrator
+@author: yzsun
 """
 import numpy as np
 
@@ -26,6 +26,20 @@ class ImagePreprocess():
             else:
                 pad_dims = ((pad_size,pad_size),(0,0))
             return np.lib.pad(self.ImageArr,pad_dims,'constant')
+            
+    # put image into center,general in the preprocess resize
+    def img2center(img_New, img):
+        height,width = img.shape
+        height_New,width_New = img_New.shape
+        
+        assert (width_New > width) and (height_New > height)
+        
+        widthIndex = int((width_New - width) / 2)
+        heightIndex = int((height_New - height) / 2)
+        img_New[heightIndex:heightIndex + height,
+                  widthIndex:widthIndex+width] = img_small
+        return img_New
+
     # resize
     def resize(self,ImageArr):
         
