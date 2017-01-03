@@ -3,6 +3,10 @@
 Created on Sun Jan 01 19:16:32 2017
 
 @author: yzsun
+
+Inspired by 
+《Multi-Column Deep Neural Networks for Offline Handwritten Chinese Character Classification》
+
 """
 import numpy as np
 
