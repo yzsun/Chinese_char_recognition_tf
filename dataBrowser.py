@@ -10,6 +10,7 @@ Created on Mon Dec 26 11:35:12 2016
 4.测试集：HWDB1.1tst_gnt
     60个.gnt文件(1241-c.gnt ~ 1399-c.gnt)
     1174张测试图，402个字
+
 """
 
 import numpy as np

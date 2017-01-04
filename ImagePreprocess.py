@@ -56,5 +56,13 @@ class ImagePreprocess():
         height_sum = np.sum(ImageArr,axis=0)
         width_sum = np.sum(ImageArr,axis=1)
         return ImageArr[width_sum!=0][:,height_sum!=0]
+
+    # contrast maximization
+    # forece the image to have values ranging from 0 to 255
+    def maxContrast(ImageArr):
         
+        
+        
+    # image mean subtraction
+    def meanSub(ImageArr)
         
