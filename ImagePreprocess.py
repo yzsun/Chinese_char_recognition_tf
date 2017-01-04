@@ -47,7 +47,11 @@ class ImagePreprocess():
         return img_New
 
     # resize
-    def resize(self,ImageArr):
+    def resize_keepRatio(self,ImageArr,sizeNew):
+        height,width = ImageArr.shape[:2]
+        height_new,width_new = sizeNew
+        maxDim = 
+        
 
 
     # crop zeros 
