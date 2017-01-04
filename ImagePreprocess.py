@@ -47,12 +47,13 @@ class ImagePreprocess():
         return img_New
 
     # resize
-    def resize_keepRatio(self,ImageArr,sizeNew):
-        height,width = ImageArr.shape[:2]
-        height_new,width_new = sizeNew
-        maxDim = 
-        
-
+    def resize_keepRatio(ImageArr,(h_sp,w_sp)):
+        #input:RGB/Gray
+        h,w = ImageArr.shape[:2]
+        ratio = min(h_sp/h,w_sp/w)
+    #    ratio = min(h_sp,w_sp)/max(h,w) #different algorithm need distinguish
+        h_,w_ = int(h*ratio),int(w*ratio)
+        return cv2.resize(ImageArr,(w_,h_))
 
     # crop zeros 
     # crop the rows and columns whose elements are all zeros
