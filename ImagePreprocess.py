@@ -8,11 +8,11 @@ Inspired by
 《Multi-Column Deep Neural Networks for Offline Handwritten Chinese Character Classification》
 
 """
+from __future__ import division
 import numpy as np
 
 from PIL import Image
-from __future__ import division
-
+import cv2
 
 
 class ImagePreprocess():
@@ -34,7 +34,7 @@ class ImagePreprocess():
             return np.lib.pad(self.ImageArr,pad_dims,'constant')
 
     # put image into center,general in the preprocess resize
-    def img2center(img_New, img):
+    def img2center(self,img_New, img):
         height,width = img.shape
         height_New,width_New = img_New.shape
         
@@ -47,7 +47,7 @@ class ImagePreprocess():
         return img_New
 
     # resize
-    def resize_keepRatio(ImageArr,(h_sp,w_sp)):
+    def resize_keepRatio(self,ImageArr,(h_sp,w_sp)):
         #input:RGB/Gray
         h,w = ImageArr.shape[:2]
         ratio = min(h_sp/h,w_sp/w)
@@ -64,10 +64,12 @@ class ImagePreprocess():
 
     # contrast maximization
     # forece the image to have values ranging from 0 to 255
-    def maxContrast(ImageArr):
+    def maxContrast(self,ImageArr):
+        pass
         
         
         
     # image mean subtraction
-    def meanSub(ImageArr)
+    def meanSub(self,ImageArr):
+        pass
         
